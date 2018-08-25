@@ -1,0 +1,52 @@
+<script src="jquery-3.3.1.min.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#push").click(function(){
+            var top=$("#entry").val();
+            $("#pushed").prepend("<div class='did'>"+top+"</div>");
+            $("#pushed").sortable();
+        });
+    });
+</script>
+
+<style>
+    .did
+    {
+        width: 15%;
+        height: 50px;
+        margin: 10px;
+        background: bisque;
+        float: left;
+    }
+    .stack
+    {
+        background: brown;
+        width: 30%;
+        height: 500px;
+        float: left;
+        overflow-y: scroll;
+    }
+    .data
+    {
+        background: burlywood;
+        width: 50%;
+        height: 500px;
+        float: left;
+    }
+</style>
+
+<body>
+    <div class="data">
+        <h2>Enter data :</h2>
+        <p>
+            <input type="text" id="entry" placeholder="enter data...."/>
+            
+        </p>
+        <input type="submit" value="Push" id="push"/>
+    </div>
+    <div class="stack">
+        <h1>Stack</h1>
+        <div id="pushed"></div>
+    </div>
+</body>

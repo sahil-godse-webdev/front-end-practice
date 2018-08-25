@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var amt=$("#loan").val();
+        var ten = $("#tenure").val();
+        var roi=$("#roi").val();
+        $("#submit").click(function(){
+            var I=(amt*ten*roi)/100;
+            var total=amt+I;
+            var EMI=(total)/(ten*100);
+            $("#result").html("EMI is "+EMI+"<br>with loan amount of "+amt+"<br>for the tenure of "+ten+" years<br>and @ rate of interest of "+roi);
+        });
+        $("#age").change(function(){
+            $("#change").html($("#age").val());
+        });
+
+        $("#submit").click(function(){
+            location.href = "EMI target page.html";
+        });
+    });
+</script>
+<body>
+    <form name="register" action="#">
+        <fieldset style="width: 40%; background: chocolate;" >
+            <legend style="font-size: 35px; color:azure; background:dodgerblue; font-weight: bold;">EMI</legend>
+            <label>Name:</label><br>
+            <input type="text" id="name" placeholder="enter name"/><br>
+            
+            <label>Age:</label><br>
+            0<input type="range" id="age" value="3"/><i id="change">3</i><br>
+            
+            <label>Loan amount:</label><br>
+            <input type="text" id="loan" placeholder="enter loan amount"/><br>
+            
+            <label>tenure:</label><br>
+            <input type="text" id="tenure"/><br>
+            
+            <label>Rate of Interest:</label><br>
+            <input type="number" value="8" id="roi"/>in percentage<br>
+            
+            <input type="submit" id="submit"/><hr>
+            <p id="result"></p>
+        </fieldset>
+    </form>
+</body>

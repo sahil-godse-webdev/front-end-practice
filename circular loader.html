@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circular loader at start of page</title>
+    <style>
+        #accordian
+        {
+            width: 50%;
+        }
+        #accordian h1
+        {
+            margin: 0;
+            border: 1px solid #dfdfdf;
+            background: #FFB100;
+            font-size: 20px;
+            box-sizing: border-box;
+            padding: 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            color: white;
+            cursor: pointer;
+        }
+        #accordian p
+        {
+            margin: 0;
+            background: rgb(255,255,255);
+            color: gray;
+            font-size: 13px;
+            font-family: sans-serif;
+            box-sizing: border-box;
+            padding: 10px;
+            display: none;
+        }
+        span
+        {
+            float: right;
+            transform: rotate(90deg);
+        }
+        #circle
+        {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: white;
+        }
+        #inner
+        {
+            width: 10px;
+            height: 10px;
+            background: white;
+            position: relative;
+            
+        }
+        #load
+        {
+            width: 40px;
+            height: 40px;
+            background: #dfdfdf;
+            margin: 215px 655px;
+        }
+        .loader
+        {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            border: 10px solid #dfdfdf;
+            border-top: 10px solid #FFC500;
+            margin: 50px;
+            animation: spin 1s infinite;
+
+        }
+        @keyframes spin{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%
+            {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#inner").animate({top:"0",left:"30px"},500,function(){
+                $("#inner").animate({top:"30px",left:"30px"},500,function(){
+                    $("#inner").animate({top:"30px",left:"0"},500,function(){
+                        $("#inner").animate({top:"0",left:"0"},500,function(){
+                            $("#inner").animate({top:"0",left:"30px"},500,function(){
+                                $("#inner").animate({top:"30px",left:"30px"},500,function(){
+                                    $("#inner").animate({top:"30px",left:"0"},500,function(){  
+                                        $("#circle").css({display:"none"});
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+
+            $("h1").click(function(){
+                $("p").slideUp();
+                $("span").css({transform:'rotate(90deg)'});
+                $(this).next("p").slideDown();
+                $(this).find("span").css({transform:"rotate(-90deg)",transition:'all 0.5s'});
+            });
+        });
+    </script>
+</head>
+<body>
+        <div id="circle">
+            <div id="load">
+                    <div id="inner"></div>
+            </div>
+            
+        </div>
+        <div id="accordian">
+                <h1>HTML<span>></span></h1>
+                <p>Hypertext Markup Language is the standard markup language for creating web pages and web applications. With Cascading Style Sheets and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.Hypertext Markup Language is the standard markup language for creating web pages and web applications. With Cascading Style Sheets and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.</p>
+                <h1>CSS<span>></span></h1>
+                <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScriptCascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript</p>
+                <h1>JavaScript<span>></span></h1>
+                <p>JavaScript, often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm. JavaScript, often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm. </p>
+                <h1>jQuery<span>></span></h1>
+                <p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript</p>
+        </div>
+        <div class="loader"></div>
+</body>

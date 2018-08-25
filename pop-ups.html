@@ -1,0 +1,113 @@
+<head>
+    <style>
+        .button
+        {
+            width: 200px;
+            background: #dfdfdf;
+            border: 1px solid #ffb100;
+            border-radius: 100px;
+            height: 50px;
+            cursor: pointer;
+            color: brown;
+            font-size: 20px;
+            font-family: sans-serif,Roboto;
+        }
+        #Success
+        {
+            width: 300px;
+            height: 150px;
+            background: greenyellow;
+            box-sizing: border-box;
+            padding: 40px;
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            left: 500px;
+            top: 100px;
+            box-shadow: 4px 10px 121px 59px burlywood;
+            display: none;
+        }
+        #Failed
+        {
+            width: 300px;
+            height: 150px;
+            background: red;
+            box-sizing: border-box;
+            padding: 40px;
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            left: 500px;
+            top: 100px;
+            box-shadow: 4px 10px 121px 59px #93826c;
+            display: none;
+        }
+        #x
+        {
+            width: 30px;
+            height: 35px;
+            background: #968f8f;
+            border-radius: 38px;
+            box-sizing: border-box;
+            padding-left: 6px;
+            font-family: sans-serif;
+            position: absolute;
+            top: -13px;
+            left: 290px;
+            font-size: 26px;
+            cursor: pointer;
+        }
+        #denied
+        {
+            width: 30px;
+            height: 35px;
+            background: black;
+            border-radius: 38px;
+            box-sizing: border-box;
+            padding-left: 10px;
+            font-family: sans-serif;
+            position: absolute;
+            top: -13px;
+            left: 290px;
+            font-size: 26px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $("#b1").click(function(){
+                var m=$("#marks").val();
+                if(m>=35)
+                {
+                    $("#Success").show();
+                    $("#x").click(function(){
+                    $("#Success").hide();
+                    });
+                }
+                else{
+                    $("#Failed").show();
+                    $("#denied").click(function(){
+                    $("#Failed").hide();
+                    });
+                }
+            });
+            
+            
+        })
+    </script>
+</head>
+
+
+<body>
+    <input type="text" placeholder="enter marks" id="marks" />
+    <input type="button" value="Success" id="b1" class="button"/>
+    <div id="Success">Congratulation, you Succeed
+            <div id="x">X</div>
+    </div>
+    
+    <div id="Failed">Unfortunatly Failed
+            <div id="denied">!</div>
+    </div>
+</body>

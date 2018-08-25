@@ -1,0 +1,25 @@
+<head>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hideme").click(function(){
+                $("h1").fadeOut(1000);
+            });
+            $("#showme").click(function(){
+                $("h1").fadeIn(1000);
+            });
+            $("#toggleme").click(function(){
+               $("#h1").fadeToggle(500);
+            });
+            
+        });
+        
+    </script>
+</head>
+
+<body>
+    <h1 id="h1">Steve Jobs</h1>
+    <input type="button" id="hideme" value="hide"/> 
+    <input type="button" id="showme" value="show"/>
+    <input id="toggleme" value="toggle" type="button"/>
+</body>

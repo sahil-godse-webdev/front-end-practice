@@ -1,0 +1,63 @@
+<head>
+    <style>
+        h2
+        {
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #FFC500;
+            width: 200px;
+            font-size: 20px;
+            box-sizing: border-box;
+            padding: 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            color: white;
+        }
+        #loader
+        {
+            width: 600px;
+            height: 5px;
+            border: 1px solid #dfdfdf;
+        }
+        .inner
+        {
+            width: 0%;
+            height: 5px;
+            background: gray;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        var html=82.22;
+        var css=60;
+        var javascript=50;
+        var jquery=40;
+        $(document).ready(function(){
+         
+                $("#html5").animate({width:html+"%"},1500);
+                $("#css3").animate({width:css+"%"},1500);
+                $("#js").animate({width:javascript+"%"},1500);
+                $("#jq").animate({width:jquery+"%"},1500);
+    
+        });
+    </script>
+</head>
+<body>
+    <h2>HTML</h2>
+    <div id="loader">
+        <div class="inner" id="html5"></div>
+    </div>
+    <h2>CSS</h2>
+    <div id="loader">
+            <div class="inner" id="css3"></div>
+    </div>
+    <h2>JAVASCRIPT</h2>
+    <div id="loader">
+        <div class="inner" id="js"></div>
+    </div>
+    <h2>JQUERY</h2>
+    <div id="loader">
+        <div class="inner" id="jq"></div>
+    </div>
+</body>

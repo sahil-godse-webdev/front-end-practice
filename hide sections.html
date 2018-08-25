@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>hide sections</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".sections").eq(0).show();
+            $("ul li a").click(function(){
+                $(".sections").hide();
+                var s=$(this).attr("id");
+                $("#"+s+"sec").fadeIn();
+            });
+        });
+    </script>
+</head>
+<style>
+    header{
+        width: 100%;
+        height: 100px;
+        background: chocolate;
+        box-sizing: border-box;
+        padding: 30px;
+        font-size: 40px;
+    }
+    nav
+    {
+        width: 100%;
+        height: 80px;
+
+    }
+    ul
+    {
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background: #eaea9f;
+    }
+    li
+    {
+        float: left;
+        width: 20%;
+        height: 100%;
+    }
+    a
+    {
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+        text-align: center;
+        float: left;
+        font-size: 30px;
+        color: white;
+    }
+    a:hover{
+        margin-left: 8px;
+        margin-top: 8px;
+        background:darkkhaki;
+        transition: linear all 0.5s;
+        color: cornsilk;
+    }
+    #s1sec
+    {
+        height: 300px;
+        display: none;
+        width: 100%;
+        background: cadetblue;
+    }
+    #s2sec
+    {
+        height: 300px;
+        width: 100%;
+        display: none;
+        background:burlywood;
+    }
+    #s3sec
+    {
+        height: 300px;
+        width: 100%;
+        display: none;
+        background:honeydew;
+    }
+    #s4sec
+    {
+        height: 300px;
+        width: 100%;
+        background:khaki;
+        display: none;
+    }
+</style>
+<body>
+    <header>Hide sections with jQuery</header>
+    <nav>
+        <ul>
+            <li><a href="#" id="s1">Home</a></li>
+            <li><a href="#" id="s2">About</a></li>
+            <li><a href="#" id="s3">Education</a></li>
+            <li><a href="#" id="s4">Contact US</a></li>
+        </ul>
+    </nav>
+    <section id="s1sec" class="sections">Home</section>
+    <section id="s2sec" class="sections">About</section>
+    <section id="s3sec" class="sections">Education</section>
+    <section id="s4sec" class="sections">Contact US</section>
+</body>
+</html>

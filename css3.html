@@ -1,0 +1,106 @@
+<style>
+            @font-face
+        {
+            font-family : aprils;
+            src : url('fonts/Aprils Standard.ttf');
+        }
+    
+    #img1{
+        border-radius: 100%;
+                box-shadow: 10px 8px 10px #21ff56;
+
+    }
+    a{
+        border-radius: 2px 0 2px 0;
+        text-shadow: 10px 10px 3px #21ff56;
+    }
+    #colprops{
+        background: -moz-radial-gradient(#c2e9fb 40%, #cfd9df 65%,#fecfef 70%,#e2ebf0 85%,#f5f7fa 10%);
+        border-radius: 30px 0 10px 0;
+        width: 25%;
+        text-align: center;
+        box-shadow: 10px 8px 10px #21ff56;
+        word-wrap: break-word;
+        overflow-y: scroll;
+        text-align: end;
+        border: 5px solid blueviolet;
+        column-count: 2;
+        column-gap: 29px;
+        column-rule: 9px dotted  #ff9a9e;
+    }
+    #font{
+        
+        font-family: aprils;
+        font-size: 40;
+        text-align: center;
+        background: pink;
+        box-shadow: 10px 10px 5px red;
+        width: 25%;
+        text-shadow: 2px 2px 0.2px green;
+        float: left;
+        -moz-transition-property:background,-moz-transform,width;
+        -moz-transition-duration:2s;
+
+    }
+    #font:hover{
+        background: orange;
+        -moz-transform: rotate(360deg);
+        -moz-transform:translate(100px,50px);
+
+    }
+    #d1
+    {
+        width: 100px;
+        height: 100px;
+        background: red;
+        float: left;
+        animation: 10s myanim ;
+        position: relative;
+    }
+        @keyframes myanim
+        {
+            0%
+            {
+                left: 0;
+                
+            }
+            25%
+            {
+                left: 100px;
+                top: 0;
+                background: blue;
+                
+            }
+            50%
+            {
+                left: 100px;
+                top: 200px;
+                background: yellow;
+                
+            }
+            75%
+            {
+                left: 0;
+                top: 200px;
+                background: orange;
+                
+            }
+            100%
+            {
+                left: 0;
+                top:0;
+                background: red;
+            }
+        }
+    
+    
+ 
+</style>
+<body>
+<img id="img1" src="images/logos/Capture.JPG"/>
+    <a>HELLO THERE</a>
+    <p id="font">HELLO</p>
+    <p id="colprops">At Metropolis, the best pathology lab in India what we believe is what we say and what we say is what we do. Being empathetic to our customers and being committed to their needs is in our DNA. Metropolis has grown to harness a culture that is open, synergistic, progressive and scientific in nature. We are the Pathology Specialists delivering over 30 million tests a year, catering to more than 20,000 medical Laboratories, Hospitals, Nursing homes and 2,00,000 Consultants. With 37 years of experience in delivering accurate reports, Metropolis has earned the reputation of being amongst the top pathology labs in India.  Our medical laboratories can be found in India, Sri Lanka, Kenya, Mauritius & Ghana.
+</p>
+    <div id="d1"></div>
+</body>

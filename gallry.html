@@ -1,0 +1,54 @@
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    #main
+    {
+        margin:0;
+        width: 100%;
+        background: brown;
+        height: 500px;
+        
+    }
+    
+    #mainimage
+    {
+        height: 100%;
+        background: bisque;
+        padding: 20px;
+        width: 70%;
+        float: left;
+    }
+    #sidebar
+    {
+        background-color: aqua;
+        height: 100%;
+        width: 30%;
+        float: left;  
+        overflow-y: scroll;
+    }
+    .inner{
+        width: 100%;
+        height: 400px;
+        margin: 3% 0 1.5% 0;
+    }
+</style>
+
+<script>
+    function change(image)
+    {
+        document.getElementById("final").setAttribute("src",image);
+    }
+</script>
+<div id="main">
+<div id="mainimage">
+    GAllry
+    <img src="images/5.jpg" id="final" width="100%" height="100%">
+</div>
+<div id="sidebar">
+    <img src="images/1.jpg" onmouseenter="change(this.src)" class="inner"/>
+    <img src="images/2.jpg" onmouseenter="change(this.src)" class="inner"/>
+    <img src="images/3.jpg" onmouseenter="change(this.src)" class="inner"/>
+    <img src="images/4.jpg" onmouseenter="change(this.src)" class="inner"/>
+</div>
+</div>

@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>
+        Validation form for CSK players
+    </title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+        .error{
+            color:red;
+        }
+    </style>
+    <script type="text/javascript">
+        function show()
+        {   document.getElementById("nameerror").innerHTML="";
+            document.getElementById("phoneerror").innerHTML="";
+         var age=document.getElementById("age").value;
+         var add=document.getElementById("add").value;
+         document.getElementById("ageerror").innerHTML="";
+         var agep=/^[0-9]{1,3}$/
+            var namep=/^[a-zA-Z]{2,10}$/;
+            var phonep=/^[0-9]{10,10}$/;
+            var name=document.getElementById("name").value;
+            var phone=document.getElementById("phone").value;
+            if(name=="")
+                {
+                    document.getElementById("nameerror").innerHTML="blank error";
+                    return false;
+                }
+            else if(!name.match(namep))
+                {
+                    document.getElementById("nameerror").innerHTML="name can't be digits";
+                    return false;
+                }
+         else if(phone=="")
+             {
+                 document.getElementById("phoneerror").innerHTML="blank error";
+                 return false;
+             }
+         else if(!phone.match(phonep))
+             {
+                 document.getElementById("phoneerror").innerHTML="digit error";
+                 return false;
+             }
+         else if(age=="")
+             {
+                 document.getElementById("ageerror").innerHTML="blank error";
+                 return false;
+             }
+         else if(!age.match(agep))
+             {
+                 document.getElementById("ageerror").innerHTML="digit error";
+             }
+         else if(add=="")
+             {
+                 document.getElementById("adderror").innerHTML="blank error";
+             }
+            else{
+                document.getElementById("resultname").innerHTML="name is "+name;
+                document.getElementById("resultphone").innerHTML="phone is"+phone;
+                document.getElementById("resultage").innerHTML="age is "+age;
+                document.getElementById("resultadd").innerHTML="address is "+add;
+
+            }
+            
+        }
+    </script>
+    </head>
+<body>
+    <h2>CSK rocks</h2>
+    <p>winner for all time</p>
+    <p>
+    <input type="text" id="name" placeholder="enter your name"/>
+    </p>
+        <i class="error" id="nameerror"><b></b></i>
+    <p>
+    <input type="text" id="phone" placeholder="enter contact no."/>
+    </p>
+    <i class="error" id="phoneerror"><b></b></i>
+    <p>
+        <input type="text" placeholder="enter age" id="age"/>
+    </p>
+    <i class="error" id="ageerror"><b></b></i>
+    <p>
+    <input type="text" id="add" placeholder="enter address"/>
+        
+    </p>
+    <i class="error" id="adderror"><b></b></i>
+    <p><input type="submit" onclick="show()"></p>
+    <i id="resultname"><b></b></i><br>
+    <i id="resultphone"><b></b></i><br>
+    <i id="resultage"><b></b></i><br>
+    <i id="resultadd"><b></b></i>
+    </body>
+
+</html>

@@ -1,0 +1,40 @@
+<style>
+    #bgimage
+    {
+        width: 1000px;
+        height: 600px;
+        background: url('images/Big%20ben%20Elizabeth%20Tower-2.jpg') no-repeat;
+        background-size: cover;
+        -moz-animation: anime 15s infinite;
+    }
+    @-moz-keyframes anime
+    {
+        0% {
+            background: url('images/London-UK-Wallpaper-18-1920x1080.jpg') no-repeat;
+            background-size: cover;
+        }
+        20% {
+            background: url('images/LimestoneEntrance%20copy.jpg') no-repeat;
+            background-size: cover;
+        }
+        40% {
+            background: url('images/uk.jpg') no-repeat;
+            background-size: cover;
+        }
+        60% {
+            background: url('images/Big%20ben%20Elizabeth%20Tower-2.jpg') no-repeat;
+            background-size: cover;
+        }
+        80% {
+            background: url('images/38d5989e6a292ae1fb958ce02e7b90bb.jpg') no-repeat;
+            background-size: cover;
+        }
+        100% {
+            background: url('images/dokter-untuk-asma%5B264%5D.jpg') no-repeat;
+            background-size: cover;
+        }
+    }
+</style>
+<body>
+    <div id="bgimage"></div>
+</body>
